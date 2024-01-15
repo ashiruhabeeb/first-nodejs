@@ -3,9 +3,6 @@ const mongoose = require('mongoose')
 const Product = require('./models/productModel')
 const app = express() 
 
-// application server variable
-let port = 3000
-
 // Application middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
@@ -84,11 +81,11 @@ app.delete('/products/:id', async(req, res) => {
 })
 
 // Initialize database connection
-mongoose.connect('mongodb+srv://admin:lXwqOCMnKwXDzO1L@mngjs.mw5flxh.mongodb.net/firstNODEJS?retryWrites=true&w=majority')
+mongoose.connect(process.env.DB_URL)
 .then(() => {
     // Start application server
-    app.listen(port, ()=> {
-        console.log('Node API app is listening on port ' + port)
+    app.listen(process.env.SERVER_PORT, ()=> {
+        console.log('Node API app is listening on port ' + process.env.SERVER_PORT)
     })
     console.log('connected to MongoDB ')
 }).catch(() => {
