@@ -1,0 +1,2 @@
+apiup:
+	npm run serve
