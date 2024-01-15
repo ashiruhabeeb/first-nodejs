@@ -1,0 +1,38 @@
+GET http://localhost:3000/healthcheck
+
+###
+
+POST http://localhost:3000/create
+Content-Type: application/json
+
+{
+    "name": "Christian Dior Sauvage Cologne",
+    "quantity": 1,
+    "price": 420,
+    "image": "https://images.pexels.com/photos/12562773/pexels-photo-12562773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}
+
+###
+
+GET http://localhost:3000/products
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/products/65a57ca478730d20978bd485
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:3000/products/65a57ca478730d20978bd485
+Content-Type: application/json
+
+{
+    "name": "Hermes Twilly",
+    "image": "https://images.pexels.com/photos/5812092/pexels-photo-5812092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}
+
+###
+
+DELETE http://localhost:3000/products/65a57ca478730d20978bd485
+Content-Type: application/json
